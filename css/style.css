@@ -21,7 +21,7 @@ main {
 /* Griglia che implementa Campo Minato */
 
 ._grid {
-    max-width: 800px;
+    width: 800px;
     height: 800px;
     display: flex;
     flex-wrap: wrap;
@@ -30,8 +30,6 @@ main {
 }
 
 ._cells {
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     border: 1px solid black;
 
     display: flex;
@@ -39,6 +37,21 @@ main {
     justify-content: center;
 
     cursor: pointer;
+}
+
+._cells._cells-100 {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+._cells._cells-90 {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+._cells._cells-70 {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 ._clicked {

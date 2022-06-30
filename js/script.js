@@ -79,9 +79,35 @@ const createCell = () => {
 
 // Unica aggiunta rispetto a Milestone 3 è addEventListener che abilita il bgc delle celle al click
 
-button.addEventListener('click', (event) => {
+// button.addEventListener('click', (event) => {
+//     for (let i = 1; i <= 100; i++) {
+//         const element = createCell();
+//         element.classList.add('_cells-100'); // * Aggiunta per realizzare il bonus
+//         element.innerText = i; // $ MILESTONE 3
+//         element.dataset.number = i; // $ MILESTONE 4
+
+//         element.addEventListener('click', (event) => { // $ MILESTONE 4
+//             event.target.classList.toggle('_clicked');
+//             console.log("Il numero contenuto nella cella è: " + event.target.dataset.number);
+//         })
+
+//         grid.appendChild(element);
+//     }
+// })
+
+// $ BONUS
+
+// @ Bersagliamo la select che ci consente di selezionare il livello da noi desiderato
+
+const select = document.getElementById('select-level');
+
+// @ Realizziamo 3 Row Functions che verranno chiamate in relazione al livello di difficoltà
+// @ scelto
+
+const battleCamp10 = () => {
     for (let i = 1; i <= 100; i++) {
         const element = createCell();
+        element.classList.add('_cells-100'); // * Aggiunta per realizzare il bonus
         element.innerText = i; // $ MILESTONE 3
         element.dataset.number = i; // $ MILESTONE 4
 
@@ -92,7 +118,59 @@ button.addEventListener('click', (event) => {
 
         grid.appendChild(element);
     }
+}
+
+const battleCamp9 = () => {
+    for (let i = 1; i <= 81; i++) {
+        const element = createCell();
+        element.classList.add('_cells-90'); // * Aggiunta per realizzare il bonus
+        element.innerText = i; // $ MILESTONE 3
+        element.dataset.number = i; // $ MILESTONE 4
+
+        element.addEventListener('click', (event) => { // $ MILESTONE 4
+            event.target.classList.toggle('_clicked');
+            console.log("Il numero contenuto nella cella è: " + event.target.dataset.number);
+        })
+
+        grid.appendChild(element);
+    }
+}
+
+const battleCamp7 = () => {
+    for (let i = 1; i <= 49; i++) {
+        const element = createCell();
+        element.classList.add('_cells-70'); // * Aggiunta per realizzare il bonus
+        element.innerText = i; // $ MILESTONE 3
+        element.dataset.number = i; // $ MILESTONE 4
+
+        element.addEventListener('click', (event) => { // $ MILESTONE 4
+            event.target.classList.toggle('_clicked');
+            console.log("Il numero contenuto nella cella è: " + event.target.dataset.number);
+        })
+
+        grid.appendChild(element);
+    }
+}
+
+button.addEventListener('click', (event) => {
+
+    grid.innerHTML = '';
+
+    switch (select.value) {
+        case 'sim':
+            battleCamp7();
+            break;
+
+        case 'med':
+            battleCamp9();
+            break;
+
+        case 'dif':
+            battleCamp10();
+            break;
+
+        default:
+            console.log('Scegli uno dei 3 livelli di difficoltà!');
+    }
 })
-
-
 
