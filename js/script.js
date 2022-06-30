@@ -35,10 +35,11 @@
 
 // $ MILESTONE 2
 
-// @ Bersagliamo il button play e poi, servendoci dell'addEventListener determiniamo la 
+// @ Bersagliamo il button play, la griglia e poi, servendoci dell'addEventListener determiniamo la 
 // @ creazione della tabella
 
 const grid = document.getElementById('grid');
+const button = document.getElementById('button')
 
 // @ Creiamo le row functions che potranno essere in futuro riutilizzate
 
@@ -50,8 +51,10 @@ const createCell = () => {
 
 // @ Servendoci di un ciclo for creiamo 100 celle e le "appendiamo" alla griglia
 
-for (let i = 1; i <= 100; i++) {
-    const element = createCell();
+button.addEventListener('click', (event) => {
+    for (let i = 1; i <= 100; i++) {
+        const element = createCell();
 
-    grid.appendChild(element);
-}
+        grid.appendChild(element);
+    }
+})
