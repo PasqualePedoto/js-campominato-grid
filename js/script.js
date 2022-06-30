@@ -28,3 +28,30 @@
 // - questo bonus richiederà una riflessione extra per quel che riguarda il calcolo della larghezza delle celle ;)
 // Consigli del giorno:
 // Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
+
+// $ MILESTONE 1
+
+// completata su HTML e pushata
+
+// $ MILESTONE 2
+
+// @ Bersagliamo il button play e poi, servendoci dell'addEventListener determiniamo la 
+// @ creazione della tabella
+
+const grid = document.getElementById('grid');
+
+// @ Creiamo le row functions che potranno essere in futuro riutilizzate
+
+const createCell = () => {
+    const element = document.createElement('div');
+    element.classList.add('_cells');
+    return element;
+}
+
+// @ Servendoci di un ciclo for creiamo 100 celle e le "appendiamo" alla griglia
+
+for (let i = 1; i <= 100; i++) {
+    const element = createCell();
+
+    grid.appendChild(element);
+}
