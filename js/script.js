@@ -51,9 +51,20 @@ const createCell = () => {
 
 // @ Servendoci di un ciclo for creiamo 100 celle e le "appendiamo" alla griglia
 
+// button.addEventListener('click', (event) => {
+//     for (let i = 1; i <= 100; i++) {
+//         const element = createCell();
+
+//         grid.appendChild(element);
+//     }
+// })
+
+// $ MILESTONE 3
+
 button.addEventListener('click', (event) => {
     for (let i = 1; i <= 100; i++) {
         const element = createCell();
+        element.innerText = i;
 
         grid.appendChild(element);
     }
