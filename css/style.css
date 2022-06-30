@@ -37,6 +37,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
+}
+
+._clicked {
+    background-color: dodgerblue;
 }
 
 /* FOOTER */

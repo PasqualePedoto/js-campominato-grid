@@ -46,6 +46,7 @@ const button = document.getElementById('button')
 const createCell = () => {
     const element = document.createElement('div');
     element.classList.add('_cells');
+
     return element;
 }
 
@@ -61,11 +62,37 @@ const createCell = () => {
 
 // $ MILESTONE 3
 
+// Unica aggiunta rispetto al Milestone 2 è l'innerText che consente di inserire
+// un numero all'interno della cella
+
+// button.addEventListener('click', (event) => {
+//     for (let i = 1; i <= 100; i++) {
+//         const element = createCell();
+//         element.innerText = i;  // $ MILESTONE 3
+//         element.dataset.number = i; // $ MILESTONE 4
+
+//         grid.appendChild(element);
+//     }
+// })
+
+// $ MILESTONE 4
+
+// Unica aggiunta rispetto a Milestone 3 è addEventListener che abilita il bgc delle celle al click
+
 button.addEventListener('click', (event) => {
     for (let i = 1; i <= 100; i++) {
         const element = createCell();
-        element.innerText = i;
+        element.innerText = i; // $ MILESTONE 3
+        element.dataset.number = i; // $ MILESTONE 4
+
+        element.addEventListener('click', (event) => { // $ MILESTONE 4
+            event.target.classList.toggle('_clicked');
+            console.log("Il numero contenuto nella cella è: " + event.target.dataset.number);
+        })
 
         grid.appendChild(element);
     }
 })
+
+
+
