@@ -34,3 +34,12 @@ main {
     height: calc(100% / 10);
     border: 1px solid black;
 }
+
+/* FOOTER */
+
+._footer {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+}
